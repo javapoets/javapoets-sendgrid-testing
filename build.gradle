@@ -1,0 +1,39 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+}
+
+repositories {
+    mavenCentral()
+}
+
+apply plugin: 'java'
+apply plugin: 'application'
+
+mainClassName = 'javapoets.sendgrid.SendgridSimpleExample'
+
+run {
+    args = [ "ddoherty@wearefuturetech.com", "ddoherty@wearefuturetech.com" ]
+    args = [ "test@example.com", "test@example.com" ]
+}
+
+List implementationList =  [
+      "com.sendgrid:sendgrid-java:4.8.1"
+    , "io.github.cdimascio:java-dotenv:5.2.2"
+    , "org.apache.logging.log4j:log4j-core:2.15.0"
+    , "org.apache.logging.log4j:log4j-api:2.15.0"
+]
+
+dependencies {
+    implementation implementationList
+}
+
+task execute(type:JavaExec) {
+    println 'execute()'
+    if(project.hasProperty('main-class')) main = getProperty('main-class')
+    if(project.hasProperty('my-args')) args(getProperty('my-args').split(','))
+    println 'main = ' + main
+    println 'args = ' + args
+    classpath = sourceSets.main.runtimeClasspath
+}  
