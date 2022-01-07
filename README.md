@@ -3,7 +3,7 @@
 ## Main Classes
 
 - [SendgridSimpleExample.java](src/main/java/javapoets/sendgrid/SendgridSimpleExample.java)
-= [SendgridSimpleExampleWithMailHelper.java](src/main/java/javapoets/sendgrid/SendgridSimpleExampleWithMailHelper.java)
+- [SendgridSimpleExampleWithMailHelper.java](src/main/java/javapoets/sendgrid/SendgridSimpleExampleWithMailHelper.java)
 
 ## Environment Setup
 
