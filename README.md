@@ -1,13 +1,13 @@
 # Javapoets SendGrid Testing
 
-## Main Class
+## Main Classes
 
-[SendgridExample.java](src/main/java/javapoets/sendgrid/SendgridExample.java)
-[SendgridExampleWithMailHelper.java](src/main/java/javapoets/sendgrid/SendgridExampleWithMailHelper.java)
+- [SendgridSimpleExample.java](src/main/java/javapoets/sendgrid/SendgridSimpleExample.java)
+= [SendgridSimpleExampleWithMailHelper.java](src/main/java/javapoets/sendgrid/SendgridSimpleExampleWithMailHelper.java)
 
 ## Environment Setup
 
-Create a .env file at the root of your project with the following informaiton.
+Create a `.env` file at the root of your project with the following information.
 
 ```
 SENDGRID_API_KEY=<YOUR SENDGRID API KEY>
@@ -29,7 +29,7 @@ $ javapoets-sendgrid.bat
 
 ## Run using Gradle: JavaExec
 
-### Run SendgridExample
+### Run SendgridSimpleExample
 ```bash
 $ gradle execute -Pmain-class=javapoets.sendgrid.SendgridSimpleExample -Pmy-args=test@example.com,test@example.com
 ```
