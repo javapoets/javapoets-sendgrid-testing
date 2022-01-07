@@ -23,8 +23,9 @@ $ gradle clean build run
 ```bash
 $ gradle clean build
 $ gradle installDist
-$ cd build/install/javapoets-sendgrid/bin
-$ javapoets-sendgrid.bat
+$ cd build/install/javapoets-sendgrid-testing/bin
+$ javapoets-sendgrid-testing.bat (Windows)
+$ . javapoets-sendgrid-testing (Unix)
 ```
 
 ## Run using Gradle: JavaExec
