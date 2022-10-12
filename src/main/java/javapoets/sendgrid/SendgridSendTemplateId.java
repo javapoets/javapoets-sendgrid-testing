@@ -6,7 +6,7 @@ import com.sendgrid.*;
 import com.sendgrid.helpers.mail.objects.*;
 import com.sendgrid.helpers.mail.Mail;
 
-public class SendgridSimpleExampleWithMailHelper {
+public class SendgridSendTemplateId {
 
     private static final org.apache.logging.log4j.Logger log = org.apache.logging.log4j.LogManager.getLogger();
     
@@ -16,15 +16,18 @@ public class SendgridSimpleExampleWithMailHelper {
             Dotenv dotenv = Dotenv.load();
             String sendgridApiKey = dotenv.get("SENDGRID_API_KEY");
             log.debug("sendgridApiKey = " + sendgridApiKey);
-
             log.debug("args[0] = " + args[0]);  // To: email
             log.debug("args[1] = " + args[1]);  // From: email
 
             Email from = new Email(args[1]);
-            String subject = "[" + SendgridSimpleExampleWithMailHelper.class.getSimpleName() + "] Sending with Twilio SendGrid is Fun";
             Email to = new Email(args[0]);
-            Content content = new Content("text/plain", "and easy to do anywhere, especially with Java");
+            String subject = "I'm replacing the subject tag";
+            //Content content = new Content("text/plain", "and easy to do anywhere, especially with Java");
+            Content content = new Content("text/html", "I'm replacing the <strong>body tag</strong>");
             Mail mail = new Mail(from, subject, to, content);
+            //mail.personalization.get(0).addSubstitution("-name-", "Example User");
+            //mail.personalization.get(0).addSubstitution("-city-", "Denver");
+            mail.setTemplateId("d-73e043bf82974c98a7785193ba6197e1");
 
             SendGrid sendGrid = new SendGrid(sendgridApiKey);
             Request request = new Request();

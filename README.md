@@ -40,6 +40,11 @@ $ gradle execute -Pmain-class=javapoets.sendgrid.SendgridSimpleExample -Pmy-args
 $ gradle execute -Pmain-class=javapoets.sendgrid.SendgridSimpleExampleWithMailHelper -Pmy-args=test@example.com,test@example.com
 ```
 
+### Run SendgridSendTemplateId
+```bash
+$ gradle execute -Pmain-class=javapoets.sendgrid.SendgridSendTemplateId -Pmy-args=ddoherty@wearefuturetech.com,delorean@nftiq.io
+```
+
 ## Run using Java command
 
 ### Run SendgridSimpleExample
